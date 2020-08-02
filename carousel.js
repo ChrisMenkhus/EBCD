@@ -56,14 +56,14 @@ const Carousel = () => {
             }
 
             if (rangeMin === 0) {
-                document.querySelector('.carousel-indicator.left').classList.add('hide')
+                document.querySelector('.carousel-indicator.left').classList.add('novisible')
             }
             else if (rangeMax === descendants.length -1) {
-                document.querySelector('.carousel-indicator.right').classList.add('hide')
+                document.querySelector('.carousel-indicator.right').classList.add('novisible')
             }
             else {
-                document.querySelector('.carousel-indicator.left').classList.remove('hide')
-                document.querySelector('.carousel-indicator.right').classList.remove('hide')
+                document.querySelector('.carousel-indicator.left').classList.remove('novisible')
+                document.querySelector('.carousel-indicator.right').classList.remove('novisible')
             }
         }
     }

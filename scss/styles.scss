@@ -114,7 +114,7 @@ header {
 
         .rocket {
             background-image: url('https://chrismenkhus.github.io/EBCD/images/rocket-background.jpg');
-            background-position-y: -70%;
+            // background-position-y: -70%;
             background-color: black;
         }
         
@@ -226,6 +226,9 @@ main {
             
             width: auto;
             height: auto;
+
+           height: 20rem;
+
             margin:auto;
 
             .card {
@@ -234,7 +237,8 @@ main {
                 width: 20rem;
 
                 @media only screen and (max-width: 600px) {
-                    width: 14rem;          
+                    width: 10rem;
+                    margin: auto;         
                     //come back here
                 }
                 justify-content: center;
@@ -243,6 +247,11 @@ main {
                 .card-image {
                     width: 100%;
                     margin: auto;
+                    object-fit: scale-down;
+                    height: 12rem;
+                    @media only screen and (max-width: 600px) {
+                        height: 10rem;
+                    }
                 }
 
                 ul {
@@ -308,6 +317,11 @@ main {
         .hide {
             border: 10px solid black;
             display: none;
+            opacity: 0;
+        }
+
+        transition: all 2s;
+        .novisible {
             opacity: 0;
         }
         

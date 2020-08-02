@@ -103,7 +103,7 @@ header {
         
         .banner {
             // display: flex;
-            background-image: url('https://chrismenkhus.github.io/EBCD/images/car-background.JPG');
+            background-image: url('https://chrismenkhus.github.io/EBCD/images/car-background.jpg');
             height: 100%;
             background-position: center center;
             background-repeat: none;
@@ -113,14 +113,14 @@ header {
         }
 
         .rocket {
-            background-image: url('https://chrismenkhus.github.io/EBCD/images/rocket-background.JPG');
+            background-image: url('https://chrismenkhus.github.io/EBCD/images/rocket-background.jpg');
             background-position-y: -70%;
             background-color: black;
         }
         
         .banner-wave {
             height: 100%;
-            background-image: url('https://chrismenkhus.github.io/./images/wave.SVG');
+            background-image: url('./images/wave.svg');
             background-repeat: none;
             background-size: cover;
             background-position: center center;

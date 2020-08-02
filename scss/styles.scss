@@ -115,11 +115,12 @@ header {
         .rocket {
             background-image: url('/images/rocket-background.JPG');
             background-position-y: -70%;
+            background-color: black;
         }
         
         .banner-wave {
             height: 100%;
-            background-image: url('./images/wave.SVG');
+            background-image: url('/images/wave.SVG');
             background-repeat: none;
             background-size: cover;
             background-position: center center;

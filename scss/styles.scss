@@ -1,7 +1,7 @@
 $light-color: #EDF2F4;
-$dark-color: #2B2D42;
+$dark-color: #000000;
 $primary-accent-color: #D90429;
-$secondary-accent-color: #EF233C;
+$secondary-accent-color: #84C318;
 $faded-color: #8D99AE;
 
 
@@ -37,7 +37,9 @@ ul {
     list-style-type: none;
 }
 
-// top of the page before information elements 
+button:focus { 
+    outline: none;
+}
 
 header {
     height: 50vh;
@@ -63,6 +65,10 @@ header {
                 font-size: 5rem;
                 width: fit-content;
                 margin: auto;
+                cursor: pointer;
+                a {
+                    color: $light-color;
+                }
             }
             
             .badge {
@@ -77,10 +83,6 @@ header {
             height: 100%;
             display: flex;
             flex-wrap: wrap;
-            // display: none;
-            @media only screen and (max-width: 600px) {
-                width: 100%;
-            }
             align-items: center;
             justify-content: center;
             li {
@@ -89,6 +91,17 @@ header {
                 a {
                     color: $light-color;
                 }
+            }
+            @media only screen and (max-width: 600px) {
+                width: 100%;
+                li { 
+                    a {
+                        background-color: $dark-color;
+                    color: $light-color;
+                    padding: 0 0.5rem;
+                    }
+                }
+                
             }
         }
             
@@ -99,23 +112,21 @@ header {
     .banner-container {
         height: 100%;
         display: flex column;
-        // margin-bottom: 10rem;
         
         .banner {
-            // display: flex;
+            display: flex;
             background-image: url('https://chrismenkhus.github.io/EBCD/images/car-background.jpg');
             height: 100%;
             background-position: center center;
             background-repeat: none;
             background-size: cover;
             margin-bottom: -49vh;
-            // bottom: -1rem;
         }
 
         .rocket {
             background-image: url('https://chrismenkhus.github.io/EBCD/images/rocket-background.jpg');
-            // background-position-y: -70%;
             background-color: black;
+            background-attachment: fixed;
         }
         
         .banner-wave {
@@ -124,11 +135,6 @@ header {
             background-repeat: none;
             background-size: cover;
             background-position: center center;
-            // border-bottom: 3rem solid $light-color;
-
-            // background-color: red;
-            // height: 20rem;
-
             svg {
                 border: 0;
                 padding: 0;
@@ -140,8 +146,9 @@ header {
 
 main {
     width: 100%;
-    height: 50vh;
-    display: flex;
+    height: auto;
+    display: flex column;
+
 }
 
 .showcase-container {
@@ -156,6 +163,8 @@ main {
 
     margin: auto;
     margin-top: -4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
 
 
     .showcase-options {
@@ -199,13 +208,21 @@ main {
         padding: 1rem;
 
         .carousel-indicator {
-            height: 2rem; width: 2rem;
+            height: 4rem; width: 4rem;
             min-width: 2rem;
+            min-height: 2rem;
+            @media only screen and (max-width: 600px) {
+                width: 2rem;
+                height: 2rem;
+            }
             border-radius: 2rem;
             margin: 0.4rem;
             cursor: pointer;
 
             background-color: $primary-accent-color;
+
+            transition: opacity 0.5s;
+
         }
         .left {
             margin-right: 1rem;
@@ -281,12 +298,16 @@ main {
                         text-align: right;
                         margin: auto 0.1rem auto 2rem;
                         line-height: 0.8rem;
+                        
                     }
 
                     #price {
                         font-size: 2rem;
                         text-align: left;
                         margin: auto 2rem auto 0.1rem;
+                        span {
+                            font-size: 0.9rem;
+                        }
                     }
                 }
                 .row {
@@ -320,7 +341,6 @@ main {
             opacity: 0;
         }
 
-        transition: all 2s;
         .novisible {
             opacity: 0;
         }
@@ -367,15 +387,18 @@ main {
         align-items: center;
         margin: 2rem;
         @media only screen and (max-width: 600px) {
-            width: 14rem;      
+            width: 100%;    
             height: auto;    
         }
+
+
 
         .label {
             font-size: 2rem;
             top: 0;
             margin-top: 1rem;
             margin-bottom: auto;
+            text-align: center;
         }
 
         .hours {
@@ -429,7 +452,7 @@ main {
 
                 // border: 1px solid blue;  
             }
-            transition: all 1s;
+            transition: all 0.3s;
             &:hover {
                 transform: scale(1.1);
             }
@@ -438,5 +461,104 @@ main {
     }
 }
 
+.cta-button {
+    width: 14rem;
+    height: 1rem;
+    opacity: 0;
+    background-color: $dark-color;
+    color: $light-color;
+    border: 0;
+    font-size: 1.2rem;
+    margin: auto;
+    cursor: pointer;
+    margin-top: calc(15vh);
+
+    transition: all 0.5s;
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    animation: 2s heightslider forwards;
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 0rem;
+        height: 2rem;
+        background-color: $primary-accent-color;
+        right: 50%;
+        margin-right: -8rem;
+        margin-top: -0.3rem;
+        z-index: -2;
+
+        animation: 2s widthslider forwards; 
+        animation-delay: 2s;
+    }
+}
+
+@keyframes heightslider {
+    to {
+        height: 2.7rem;
+        opacity: 1;
+    }
+}
+
+@keyframes widthslider {
+    to {
+        width: 16rem;
+        opacity: 1;
+    }
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background-color: #FFF;
+    margin: 0 auto 4rem;
+
+    .map {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+
+    position: fixed;
+    bottom: 0;
+    right: calc(50% - 5.5rem);
 
 
+}
+
+.secondarycolor {
+    text-align: center;
+    background-color: $secondary-accent-color;
+    color: $light-color;
+}
+
+.warningtext {
+    &:before {
+        content: '⚠️'
+    }
+    font-size: 0.9rem;
+    text-align: center;
+    color: red;
+    padding: 1rem;
+}
+
+ion-icon {
+    font-size: 34px;
+    padding: 0 0.5rem;
+
+    transition: all 0.3s;
+    &:hover {
+        transform: scale(1.1);
+        color: $primary-accent-color;
+    }
+}

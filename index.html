@@ -11,7 +11,7 @@
     <header>
         <nav class='navbar-container'>
             <div class='navinfo'>
-                <h1 class='logo'>EBCD</h1>
+                <h1 class='logo'><a href='../index.html'>EBCD</a></h1>
                 <h5 class='badge'>Electric<br/>Boogaloo<br/>Car<br/>Dealership</h5>
             </div>
             <ul class='navlinks'>
@@ -21,11 +21,15 @@
         </nav>
         <section class='banner-container'>
             <div class='banner' >
+                <button class='cta-button' onclick={window.location.href='contact.html'}>Visit Us Today</div>
+
             </div>
             <div class='banner-wave' />
         </section>
     </header>
+
     <main>
+
         <section class='showcase-container'>
             <div class='showcase-options'>
                 <ul>
@@ -34,6 +38,7 @@
                     <li><a href='#'>2019</a></li>
                 </ul>
             </div>
+
             <div class='carousel-container'>
                 <img class='carousel-indicator left' src='./images/left.svg'/>
 
@@ -47,7 +52,7 @@
                             <li id='model'>Model S</li>
                             <div class='row'>
                                 <li id='price-label'>Starting as<br/>low as</li>
-                                <li id='price'>$50,000</li>
+                                <li id='price'>$50,<span>000</span></li>
                             </div>
                         </ul>
                         <button class='card-button'/>
@@ -63,7 +68,7 @@
                             <li id='model'>Model 3</li>
                             <div class='row'>
                                 <li id='price-label'>Starting as<br/>low as</li>
-                                <li id='price'>$50,000</li>
+                                <li id='price'>$50,<span>000</span></li>
                             </div>
                         </ul>
                         <button class='card-button'/>
@@ -79,7 +84,7 @@
                             <li id='model'>E-Tron</li>
                             <div class='row'>
                                 <li id='price-label'>Starting as<br/>low as</li>
-                                <li id='price'>$50,000</li>
+                                <li id='price'>$50,<span>000</span></li>
                             </div>
                         </ul>
                         <button class='card-button'/>
@@ -95,7 +100,7 @@
                             <li id='model'>Model S</li>
                             <div class='row'>
                                 <li id='price-label'>Starting as<br/>low as</li>
-                                <li id='price'>$70,000</li>
+                                <li id='price'>$70,<span>000</span></li>
                             </div>
 
                             
@@ -113,19 +118,34 @@
                             <li id='model'>Model X</li>
                             <div class='row'>
                                 <li id='price-label'>Starting as<br/>low as</li>
-                                <li id='price'>$50,000</li>
+                                <li id='price'>$50,<span>000</span></li>
                             </div>
                         </ul>
                         <button class='card-button'/>
                     </div>      
                 </div>
+
                 </div>
                 
                 <img class='carousel-indicator right' src='images/right.svg' alt='go right'/>
 
             </div>
         </section>
+        <section class='infobox-container'> 
+            <div class='infobox'>
+                <div class='row'>
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+                <ion-icon name="logo-twitter"></ion-icon>
+                </div>
+            </div>
+        </section>
     </main>
+    <footer>
+
+    </footer>
 </body>
 <script src='script.js' type='module'></script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
 </html>
